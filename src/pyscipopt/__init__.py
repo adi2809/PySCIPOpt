@@ -7,6 +7,7 @@ if hasattr(os, 'add_dll_directory'):
         os.add_dll_directory(os.path.join(os.getenv('SCIPOPTDIR').strip('"'), 'bin'))
 
 # export user-relevant objects:
+from pyscipopt.scip import Cutsel
 from pyscipopt.Multidict import multidict
 from pyscipopt.scip      import Model
 from pyscipopt.scip      import Variable
