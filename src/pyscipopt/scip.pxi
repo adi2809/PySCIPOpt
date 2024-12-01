@@ -2169,6 +2169,10 @@ cdef class Model:
         """
         return SCIPgetTotalTime(self._scip)
 
+    def getPrimalDualIntegral(self):
+        primaldualintegral = self._scip.stat.primaldualintegral
+        return primaldualintegral
+
     def getSolvingTime(self):
         """
         Retrieve the current solving time in seconds.

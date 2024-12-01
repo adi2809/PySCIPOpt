@@ -338,7 +338,7 @@ cdef extern from "scip/scip.h":
     ctypedef double SCIP_Real
 
     ctypedef struct SCIP:
-        pass
+        SCIP_STAT* stat
 
     ctypedef struct SCIP_VAR:
         pass
@@ -1796,6 +1796,10 @@ cdef extern from "scip/cons_cardinality.h":
                                           SCIP_CONS* cons,
                                           SCIP_VAR* var,
                                           SCIP_VAR* indvar)
+
+cdef extern from "scip/struct_stat.h":
+    ctypedef struct SCIP_STAT:
+        SCIP_Real   primaldualintegral
 
 cdef extern from "scip/cons_indicator.h":
     SCIP_RETCODE SCIPcreateConsIndicator(SCIP* scip,
